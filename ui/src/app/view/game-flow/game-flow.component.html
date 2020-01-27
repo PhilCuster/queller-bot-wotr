@@ -1,0 +1,21 @@
+<mat-accordion class="turn-flow-accordion">
+
+    <mat-expansion-panel [expanded]="phase === 1" [disabled]="phase !== 1" hideToggle>
+      <mat-expansion-panel-header>
+        <b>Phase 1</b>
+      </mat-expansion-panel-header>
+  
+      <app-phase-one></app-phase-one>
+  
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="phase === 2" [disabled]="phase !== 2" hideToggle>
+      <mat-expansion-panel-header>
+        <b>Phase 2</b>
+      </mat-expansion-panel-header>
+  
+      This the expansion 2 content
+  
+    </mat-expansion-panel>
+  
+  </mat-accordion>
