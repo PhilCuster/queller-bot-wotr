@@ -1,3 +1,50 @@
-<div class="draw-button">
-    <button *ngIf="!cardsDrawn" (click)="drawCards()" mat-raised-button color="primary">Draw Cards</button>
+<div *ngIf="step === 1" class="draw-button">
+  <button (click)="drawCards()" mat-raised-button color="primary">
+    Draw Cards
+  </button>
+</div>
+<div *ngIf="step === 2" class="step-2">
+  Do I have more then six cards in my hand?
+  <button (click)="step2Yes()" mat-raised-button color="primary">Yes</button>
+  <button (click)="step2No()" mat-raised-button color="warn">No</button>
+</div>
+
+<div *ngIf="step === 3" class="step-3">
+  Am I holding more than 1 strategy card?
+  <button (click)="step3Yes()" mat-raised-button color="primary">Yes</button>
+  <button (click)="step3No()" mat-raised-button color="warn">No</button>
+</div>
+<div *ngIf="step === 4" class="step-4">
+  <div *ngIf="strategy === 'corruption'">
+    Discard using the following priority:<br />
+    <ol>
+      <li>Doesn't use the term "Fellowship revealed"</li>
+      <li>Doesn't place a tile</li>
+      <li>Strategy card</li>
+      <li>Character card</li>
+      <li>Descending order of priority</li>
+    </ol>
+  </div>
+  <div *ngIf="strategy === 'military'">
+        Discard using the following priority:<br />
+        <ol>
+          <li>Doesn't use the term "Fellowship revealed"</li>
+          <li>Character card</li>
+          <li>Strategy card</li>
+          <li>Descending order of priority</li>
+          <li>Doesn't place a tile</li>
+        </ol>
+      </div>
+  <button (click)="done()" mat-raised-button color="primary">Okay</button>
+</div>
+<div *ngIf="step === 5" class="step-5">
+  Discard using the following priority:<br />
+  <ol>
+    <li>Doesn't use the term "Fellowship revealed"</li>
+    <li>Doesn't place a tile</li>
+    <li>Character card</li>
+    <li>Strategy card</li>
+    <li>Descending order of priority</li>
+  </ol>
+  <button (click)="done()" mat-raised-button color="primary">Okay</button>
 </div>

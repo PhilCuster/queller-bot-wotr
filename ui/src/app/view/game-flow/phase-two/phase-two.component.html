@@ -1,0 +1,15 @@
+Victory point check in:
+<form [formGroup]="vpForm" (ngSubmit)="checkStrategy()">
+  <mat-form-field>
+    <input type="number" matInput placeholder="FP VP" formControlName="fpVp"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="number" matInput placeholder="SP VP" formControlName="spVp"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="number" matInput placeholder="Corruption" formControlName="corruption"/>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" [disabled]="!vpForm.valid">Submit</button>
+</form>

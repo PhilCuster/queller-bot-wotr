@@ -1,21 +1,37 @@
 <mat-accordion class="turn-flow-accordion">
+  <mat-expansion-panel
+    [expanded]="phase === 1"
+    [disabled]="phase !== 1"
+    hideToggle
+  >
+    <mat-expansion-panel-header>
+      <b>Phase 1 - Draw</b>
+    </mat-expansion-panel-header>
 
-    <mat-expansion-panel [expanded]="phase === 1" [disabled]="phase !== 1" hideToggle>
-      <mat-expansion-panel-header>
-        <b>Phase 1</b>
-      </mat-expansion-panel-header>
-  
-      <app-phase-one></app-phase-one>
-  
-    </mat-expansion-panel>
-  
-    <mat-expansion-panel [expanded]="phase === 2" [disabled]="phase !== 2" hideToggle>
-      <mat-expansion-panel-header>
-        <b>Phase 2</b>
-      </mat-expansion-panel-header>
-  
-      This the expansion 2 content
-  
-    </mat-expansion-panel>
-  
-  </mat-accordion>
+    <app-phase-one [strategy]="strategy"></app-phase-one>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel
+    [expanded]="phase === 2"
+    [disabled]="phase !== 2"
+    hideToggle
+  >
+    <mat-expansion-panel-header>
+      <b>Phase 2 - Fellowship</b>
+    </mat-expansion-panel-header>
+
+    <app-phase-two [strategy]="strategy"></app-phase-two>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel
+    [expanded]="phase === 3"
+    [disabled]="phase !== 3"
+    hideToggle
+  >
+    <mat-expansion-panel-header>
+      <b>Phase 3 - Hunt Allocation</b>
+    </mat-expansion-panel-header>
+
+    The hunt!
+  </mat-expansion-panel>
+</mat-accordion>
