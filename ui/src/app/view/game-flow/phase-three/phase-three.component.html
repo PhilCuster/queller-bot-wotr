@@ -1,0 +1,29 @@
+<h3>Pick from starting from the top:</h3>
+<div *ngIf="choosing" class="phase-three-buttons" fxLayout="column">
+    <button *ngIf="strategy === 'corruption'" (click)="fspAtStart()" mat-raised-button color="primary">
+        FSP @ start & progress is 0
+    </button>
+    <button (click)="assignMax()" mat-raised-button color="primary">
+        FSP in Mordor
+    </button>
+    <button *ngIf="strategy === 'corruption'" (click)="assign(1)" mat-raised-button color="primary">
+        <i>Aggressive</i> army adjacent to <i>target</i> which would win the game
+    </button>
+    <button *ngIf="strategy === 'corruption'" (click)="assign(1)" mat-raised-button color="primary">Shadow only has 7 dice</button>
+    <button (click)="assign(2)" mat-raised-button color="primary">
+        FSP progress is greater than 5
+    </button>
+    <button *ngIf="strategy === 'military'" (click)="fspAtStart()" mat-raised-button color="primary">
+        FSP @ start & progress is 0
+    </button>
+    <button *ngIf="strategy === 'corruption'" (click)="assign(2)" mat-raised-button color="primary">
+        Shortest FSP route leads through SP stronghold & they within two of it or
+        passed it.
+    </button>
+    <button (click)="assign(1)" mat-raised-button color="primary">None of the above</button>
+</div>
+<div fxLayout="column" *ngIf="!choosing">
+    <span *ngIf="huntDice > -1">Assign {{huntDice}} dice to the hunt pool.</span>
+    <span *ngIf="huntDice < 0">Assign the maximum amount of allowed dice to the hunt pool.</span>
+    <button mat-raised-button color="primary" (click)="done()">Okay</button>
+</div>

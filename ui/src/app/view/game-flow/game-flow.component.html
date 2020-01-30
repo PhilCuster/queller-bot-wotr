@@ -1,9 +1,5 @@
 <mat-accordion class="turn-flow-accordion">
-  <mat-expansion-panel
-    [expanded]="phase === 1"
-    [disabled]="phase !== 1"
-    hideToggle
-  >
+  <mat-expansion-panel [expanded]="phase === 1" [disabled]="phase !== 1" hideToggle>
     <mat-expansion-panel-header>
       <b>Phase 1 - Draw</b>
     </mat-expansion-panel-header>
@@ -11,11 +7,7 @@
     <app-phase-one [strategy]="strategy"></app-phase-one>
   </mat-expansion-panel>
 
-  <mat-expansion-panel
-    [expanded]="phase === 2"
-    [disabled]="phase !== 2"
-    hideToggle
-  >
+  <mat-expansion-panel [expanded]="phase === 2" [disabled]="phase !== 2" hideToggle>
     <mat-expansion-panel-header>
       <b>Phase 2 - Fellowship</b>
     </mat-expansion-panel-header>
@@ -23,15 +15,19 @@
     <app-phase-two [strategy]="strategy"></app-phase-two>
   </mat-expansion-panel>
 
-  <mat-expansion-panel
-    [expanded]="phase === 3"
-    [disabled]="phase !== 3"
-    hideToggle
-  >
+  <mat-expansion-panel [expanded]="phase === 3" [disabled]="phase !== 3" hideToggle>
     <mat-expansion-panel-header>
       <b>Phase 3 - Hunt Allocation</b>
     </mat-expansion-panel-header>
 
-    The hunt!
+    <app-phase-three [strategy]="strategy"></app-phase-three>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="phase === 4" [disabled]="phase !== 4" hideToggle>
+    <mat-expansion-panel-header>
+      <b>Phase 4 - Roll Action Dice</b>
+    </mat-expansion-panel-header>
+
+    Role your dice!
   </mat-expansion-panel>
 </mat-accordion>
